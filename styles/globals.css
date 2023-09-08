@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.page-section.page-section__intro {
+    display: flex;
+}
+.page-section.page-section__intro div {
+    width: 50%;
+}
+
+@media (max-width: 1024px) {
+    .page-section.page-section__intro {
+        flex-direction: column;
+    }
+    .page-section.page-section__intro div {
+        width: 100%;
+    }
+}
