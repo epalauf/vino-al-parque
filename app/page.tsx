@@ -2,6 +2,8 @@
 import React from "react";
 import { useTheme } from "next-themes";
 import Image from 'next/image';
+import { Input, Textarea, Button } from "@nextui-org/react";
+
 
 export default function Home() {
 	const { theme } = useTheme();
@@ -31,29 +33,57 @@ export default function Home() {
 			  setLogo('/logo_black.png');
 		  }
 	  }, [theme]);
-	  
+
 	return (
 		<div className="page-container">
 			<div className="page-section page-section__intro" style={containerStyle}>
-				<div>
+				<div className="page-section__intro__col">
 					<Image src={logo} width={1280} height={577} alt='logo'/>
 				</div>
-				<div>
+				<div className="page-section__intro__col">
 					<p>
-						Bogotá se viste de navidad en la tercera edición del primer festival de vinos a cielo abierto. Descubre los secretos de los mejores vinos, acompañados de la mejor comida y música en vivo! Te sentirás viviendo una película con una increíble banda sonora ¡NO TE LO PUEDES PERDER!.
-
+						Bogotá se viste de navidad en la tercera edición del primer festival de vinos a cielo abierto. 
+						<br/>
+						Descubre los secretos de los mejores vinos, acompañados de la mejor comida y música en vivo! Te sentirás viviendo una película con una increíble banda sonora.
+						<br/>
+						<br/>
+						Próxima edición: 1,2 y 3 de diciembre.
+						<br/>
+						<br/>
+						¡NO TE LO PUEDES PERDER!						
+					</p>
+				</div>
+			</div>
+			<div className="page-section page-section__gallery" >
+				<div className="page-section__gallery__col">
+					<p>
 						Una dedicada selección de vinos con más de 700 referencias para que disfrutes la mejor variedad de vinos en Colombia, y lo mejor, por copeo. 
-
 						Más de 14 países presentes
 						Pet friendly
 						A cielo abierto en el museo parque el chicó
 						Aforo limitado
-						Evento para mayores de edad
-
-						Próxima edición: 1,2 y 3 de diciembre					
+						Evento para mayores de edad											
 					</p>
 				</div>
+				<div className="page-section__gallery__col">
+					Carousel
+				</div>
+			</div>
+
+			<div className="page-section page-section__contact" >
+				<Input type="text" label="Nombre(s) y Apellidos" />
+				<Input type="email" label="Email" />
+				<Textarea
+					label="Mensaje"
+					labelPlacement="outside"
+					placeholder=""
+					className="max-w-xs"
+				/>
+				<Button color="primary">
+					Enviar
+				</Button>				
 			</div>
 		</div>
+		
 	);
 }

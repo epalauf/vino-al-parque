@@ -4,13 +4,10 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, DropdownIt
 import { ThemeSwitch } from "@/components/theme-switch";
 
 export const DropDownNavbar = () => {
-
-
   return (
     <Navbar>
       <NavbarBrand>
-
-        <p className="font-bold text-inherit">ACME</p>
+        <p className="font-bold text-inherit">Vap</p>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <Dropdown>
@@ -23,7 +20,7 @@ export const DropDownNavbar = () => {
                 radius="sm"
                 variant="light"
               >
-                Features
+                Ediciones
               </Button>
             </DropdownTrigger>
           </NavbarItem>
@@ -35,57 +32,28 @@ export const DropDownNavbar = () => {
             }}
           >
             <DropdownItem
-              key="autoscaling"
-              description="ACME scales apps to meet user demand, automagically, based on load."
-              //startContent={icons.scale}
+              key="2022"
+              description="2022 Primera edición"
             >
-              Autoscaling
+              2022
             </DropdownItem>
             <DropdownItem
-              key="usage_metrics"
-              description="Real-time metrics to debug issues. Slow query added? We’ll show you exactly where."
-              //startContent={icons.activity}
+              key="2023"
+              description="Summer fest 2023"
             >
-              Usage Metrics
-            </DropdownItem>
-            <DropdownItem
-              key="production_ready"
-              description="ACME runs on ACME, join us and others serving requests at web scale."
-              //startContent={icons.flash}
-            >
-              Production Ready
-            </DropdownItem>
-            <DropdownItem
-              key="99_uptime"
-              description="Applications stay on the grid with high availability and high uptime guarantees."
-              //startContent={icons.server}
-            >
-              +99% Uptime
-            </DropdownItem>
-            <DropdownItem
-              key="supreme_support"
-              description="Overcome any challenge with a supporting team ready to respond."
-              //startContent={icons.user}
-            >
-              +Supreme Support
+              2023
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Customers
-          </Link>
-        </NavbarItem>
         <NavbarItem>
           <Link color="foreground" href="#">
-            Integrations
+            Contacto
           </Link>
         </NavbarItem>
         <NavbarItem>
             <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
-
     </Navbar>
   );
 }

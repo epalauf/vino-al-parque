@@ -5,15 +5,41 @@
 .page-section.page-section__intro {
     display: flex;
 }
-.page-section.page-section__intro div {
+
+.page-section.page-section__gallery {
+    display: flex;
+}
+
+.page-section.page-section__intro .page-section__intro__col {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 50px;
+}
+
+.page-section__gallery__col:first-of-type {
+    width: 20%;
+    padding: 1rem;
+}
+
+.page-section__gallery__col:first-of-type p {
+    font-size: 1.3rem;
+}
+
+.page-section__gallery__col:last-of-type {
+    width: 80%;
+}
+
+.page-section__intro__col p {
+    font-size: 1.3rem;
 }
 
 @media (max-width: 1024px) {
     .page-section.page-section__intro {
         flex-direction: column;
     }
-    .page-section.page-section__intro div {
+    .page-section.page-section__intro .page-section__intro__col {
         width: 100%;
     }
 }
