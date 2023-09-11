@@ -1,6 +1,8 @@
 "use client"
 import React from "react";
 
+import { Image } from "@nextui-org/react";
+
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
@@ -22,7 +24,7 @@ export const CarouselComponent: React.FC = () => {
     <Carousel autoPlay infiniteLoop showStatus={false} showThumbs={false}>
       {images.map((image, index) => (
         <div key={index}>
-          <img src={image} alt={`Slide ${index}`} />
+          <Image width={1200} height={600} src={image} alt={`Slide ${index}`} />
         </div>
       ))}
     </Carousel>
