@@ -12,10 +12,10 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 export const CarouselComponent: React.FC = () => {
 
     const images = [
-        '/1.jpg',
-        '/2.jpg',
-        '/3.jpg',
-        '/4.jpg',
+        '/static/images/1.jpg',
+        '/static/images/2.jpg',
+        '/static/images/3.jpg',
+        '/static/images/4.jpg',
         // Add more image URLs as needed
       ];
 
