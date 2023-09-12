@@ -67,11 +67,11 @@ export const DropDownNavbar = () => {
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
-        <NavbarItem>
+        {/* <NavbarItem>
           <Link color="foreground" href="#">
             Contacto
           </Link>
-        </NavbarItem>
+        </NavbarItem> */}
         <NavbarItem>
             <ThemeSwitch />
         </NavbarItem>
