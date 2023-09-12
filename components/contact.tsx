@@ -46,8 +46,8 @@ export const ContactComponent = () => {
         <form onSubmit={handleSubmit}>
             <div className="page-section page-section__contact__input-container">
                 <div className="page-section page-section__contact__input">
-                    <Input onChange={handleChange} labelPlacement="inside" type="text" label="Nombre(s) y Apellidos" size="lg" id="name" name="name"/>
-                    <Input onChange={handleChange} labelPlacement="inside" type="email" label="Email" size="lg" id="email" name="email"/>
+                    <Input onChange={handleChange} labelPlacement="inside" type="text" label="Nombre(s) y Apellidos" size="md" id="name" name="name"/>
+                    <Input onChange={handleChange} labelPlacement="inside" type="email" label="Email" size="md" id="email" name="email"/>
                 </div>
                 <Textarea
                     label="Mensaje"

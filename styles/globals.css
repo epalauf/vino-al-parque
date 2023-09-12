@@ -86,4 +86,40 @@
     .page-section.page-section__intro .page-section__intro__col {
         width: 100%;
     }
+
+    .page-section.page-section__gallery {
+        flex-direction: column;
+    }
+
+    .page-section__gallery__col:first-of-type {
+        width: 100%;
+        padding: 1rem;
+    }
+    .page-section__gallery__col:last-of-type {
+        width: 100%;
+    }
+
+    .page-section__contact__input-container {
+        flex-direction: column;
+
+    }
+
+    .page-section__contact__input {
+        gap: 24px;
+        width: 100%;
+    }
+
+    .page-section__contact {
+        flex-direction: column-reverse;
+
+    }
+    .page-section__contact__form {
+        width: 100%;
+    }
+    
+    .page-section__contact__text {
+        width: 100%;
+    }
+
+    
 }
