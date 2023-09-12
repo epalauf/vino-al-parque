@@ -4,6 +4,7 @@ import { useTheme } from "next-themes";
 import Image from 'next/image';
 import { Input, Textarea, Button } from "@nextui-org/react";
 import { CarouselComponent } from "@/components/carousel";
+import { ContactComponent } from "@/components/contact";
 
 
 export default function Home() {
@@ -72,25 +73,7 @@ export default function Home() {
 			</div>
 
 			<div className="page-section page-section__contact" >
-				<div className="page-section page-section__contact__form">
-					<div className="page-section page-section__contact__input-container">
-						<div className="page-section page-section__contact__input">
-							<Input labelPlacement="inside" type="text" label="Nombre(s) y Apellidos" size="lg"/>
-							<Input labelPlacement="inside" type="email" label="Email" size="lg"/>
-						</div>
-						<Textarea
-							label="Mensaje"
-							labelPlacement="inside"
-							placeholder=""
-							className=""
-							minRows={4}
-							size="lg"
-						/>
-					</div>
-					<Button color="primary">
-						Enviar
-					</Button>	
-				</div>	
+				<ContactComponent />	
 				<div className="page-section page-section__contact__text">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nunc lacus, fermentum vitae ultricies vitae, aliquet in ligula. Nullam iaculis ipsum eget metus aliquam, vel fringilla diam cursus. Phasellus posuere diam sed enim tincidunt, nec pharetra arcu consectetur.</p>
 				
