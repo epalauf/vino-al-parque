@@ -54,14 +54,14 @@ export const ContactComponent = () => {
                     labelPlacement="inside"
                     placeholder=""
                     className=""
-                    minRows={4}
+                    minRows={3}
                     size="lg"
                     id="message" 
                     name="message"
                     onChange={handleChange}
                 />
             </div>
-            <Button color="primary" type="submit">
+            <Button color="primary" type="submit" size="lg">
                 Enviar
             </Button>
         </form>	

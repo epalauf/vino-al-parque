@@ -40,7 +40,7 @@ export default function RootLayout({
 				)}
 			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-					<div className="relative flex flex-col h-screen">
+					<div className="w-full relative flex flex-col h-screen">
 						<DropDownNavbar />
 						<main className="w-full flex items-center justify-center py-3">
 							{children}
@@ -49,11 +49,12 @@ export default function RootLayout({
 							<Link
 								isExternal
 								className="flex items-center gap-1 text-current"
-								href="https://nextui-docs-v2.vercel.app?utm_source=next-app-template"
-								title="nextui.org homepage"
+								href="#"
+								title="Vino al Parque 2023"
 							>
-								<span className="text-default-600">Powered by</span>
-								<p className="text-primary">NextUI</p>
+								<span className="text-default-600">Vino al Parque 2023</span>
+								<p>Todos los derechos reservados</p>
+								
 							</Link>
 						</footer>
 					</div>
