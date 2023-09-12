@@ -109,9 +109,8 @@
         justify-content: center;
     }
 
-    .page-section.page-section__intro {
-        
-        margin-top: 2rem;
+    .page-section.page-section__intro {        
+        margin-top: 0;
     }
 
     .page-section__intro__col p {
