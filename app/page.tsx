@@ -2,6 +2,7 @@
 import React from "react";
 import { useTheme } from "next-themes";
 import {Image} from "@nextui-org/react";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Card, CardBody} from "@nextui-org/react";	
 
 import { CarouselComponent } from "@/components/carousel";
 import { ContactComponent } from "@/components/contact";
@@ -12,6 +13,8 @@ export default function Home() {
 	const [screenHeight, setScreenHeight] = React.useState(0);
 	const [logo, setLogo] = React.useState('');
 	//const containerStyle = { height: screenHeight - 64, };
+	const {isOpen, onOpen, onOpenChange} = useDisclosure();
+	const [agreed, setAgreed] = React.useState(true);
 
 	React.useEffect(() => {
 		// Function to update the screen height state
@@ -29,46 +32,71 @@ export default function Home() {
 	  }, []);
   
 	  React.useEffect(() => { 
+		
 		  if(theme === 'dark') {
-			  setLogo('/logo_white.png');
+			  setLogo('/logo_gold.png');
 		  } else {
-			  setLogo('/logo_black.png');
+			  setLogo('/logo_silver.png');
 		  }
 	  }, [theme]);
 
+	  React.useEffect(() => { 
+		onOpen();		  
+	  }, []);
+
 	return (
 		<div className="page-container">
+			<Modal isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} hideCloseButton={true} backdrop="blur">
+				<ModalContent>
+				{(onClose) => (
+					<>
+					<ModalHeader className="flex flex-col gap-1">Verifica tu Edad</ModalHeader>
+					<ModalBody>
+						{ agreed && <p>Declaro que soy mayor de edad</p>}
+						{ !agreed && <p>Lo sentimos, está prohibido el ingreso a menores de edad al festival.</p>}
+					</ModalBody>
+					<ModalFooter>
+						{ agreed &&
+							<>
+								<Button color="primary" onPress={onClose}>
+								si
+								</Button>
+								<Button color="secondary" onPress={()=>setAgreed(false)}>
+								no
+								</Button>
+							</>
+						}
+					</ModalFooter>
+					</>
+				)}
+				</ModalContent>
+			</Modal>
 			<div className="page-section page-section__intro" >
-				<div className="page-section__intro__col">
-					<Image src={`${logo}`} width={'70%'} height={'70%'} alt='logo' isBlurred/>
-				</div>
-				<div className="page-section__intro__col">
-					<p>
-						Bogotá se viste de navidad en la tercera edición del primer festival de vinos a cielo abierto. 
+				<Image src={`${logo}`} width={'100%'} height={'auto'} alt='logo'/>
+				<div className="page-section__intro__info">
+					<p>Próxima edición: 1, 2 y 3 de diciembre.</p>
+					<p> Museo Parque el Chicó 
 						<br/>
-						Descubre los secretos de los mejores vinos, acompañados de la mejor comida y música en vivo!
+						A cielo abierto con aforo limitado
 						<br/>
-						 Te sentirás viviendo una película con una increíble banda sonora.
-						<br/>
-						
-						Próxima edición: 1, 2 y 3 de diciembre.
-						<br/>
-						<br/>
-
-						¡NO TE LO PUEDES PERDER!						
+						Evento para mayores de edad
 					</p>
 				</div>
 			</div>
 			<div className="page-section page-section__gallery" >
-				<div className="page-section__gallery__col">
-					<CarouselComponent />
-				</div>
-				<div className="page-section__gallery__col">
-					<p>
-						Una dedicada selección de vinos con más de 700 referencias para que disfrutes la mejor variedad de vinos en Colombia, y lo mejor, por copeo. 
-						Más de 14 países presentes Pet friendly A cielo abierto en el museo parque el chicó Aforo limitado Evento para mayores de edad.											
-					</p>
-				</div>
+				<CarouselComponent />
+				<Card className="page-section__gallery__card">
+					<CardBody>
+						<ul>
+							<li>Una dedicada selección de vinos con más de 700 referencias para que disfrutes la mejor variedad de vinos en Colombia, y lo mejor, por copeo. </li>
+							<li>Más de 14 países presentes Pet friendly.</li>
+							<li>Bogotá se viste de navidad en la tercera edición del primer festival de vinos a cielo abierto. </li>
+							<li>Descubre los secretos de los mejores vinos, acompañados de la mejor comida y música en vivo!</li>
+							<li>Te sentirás viviendo una película con una increíble banda sonora.</li>
+							<li>¡NO TE LO PUEDES PERDER!</li>
+						</ul>
+					</CardBody>
+				</Card>
 				
 			</div>
 			<div className="page-section page-section__contact" >

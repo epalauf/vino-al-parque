@@ -12,7 +12,7 @@ export const CarouselComponent: React.FC = () => {
         'https://i.imgur.com/iYwkH4y.jpg',
       ];
   return (
-    <Carousel showIndicators={false} autoPlay infiniteLoop showStatus={false} showThumbs={false}>
+    <Carousel showIndicators={false} autoPlay infiniteLoop showStatus={false} showThumbs={false} swipeable={false}>
       {images.map((image, index) => (
         <div key={index}>
           <img  src={image} alt={`Slide ${index}`} />
