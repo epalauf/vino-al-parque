@@ -45,16 +45,8 @@ export default function RootLayout({
 							{children}
 						</main>
 						<footer className="w-full flex items-center justify-center py-3">
-							<Link
-								isExternal
-								className="flex items-center gap-1 text-current"
-								href="#"
-								title="Vino al Parque 2023"
-							>
-								<span className="text-default-600">Vino al Parque 2023</span>
-								<p>Todos los derechos reservados</p>
-								
-							</Link>
+							<span className="text-default-600">Vino al Parque 2023</span>
+							<p>Todos los derechos reservados</p>
 						</footer>
 					</div>
 				</Providers>

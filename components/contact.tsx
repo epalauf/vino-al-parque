@@ -2,6 +2,7 @@
 
 import React, {useState, ChangeEvent, FormEvent} from "react";
 import { Input, Textarea, Button } from "@nextui-org/react";
+import { sendEmail } from "@/actions/sendEmail";
 
 
 export const ContactComponent = () => {
@@ -19,31 +20,11 @@ export const ContactComponent = () => {
         });
       };
     
-      const handleSubmit = async (e: FormEvent) => {
-        e.preventDefault();
-        console.log(formData)
-        // try {
-        //   const response = await fetch('/api/sendEmail', {
-        //     method: 'POST',
-        //     headers: {
-        //       'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(formData),
-        //   });
-    
-        //   if (response.ok) {
-        //     // Handle success (e.g., show a success message).
-        //   } else {
-        //     // Handle error (e.g., show an error message).
-        //   }
-        // } catch (error) {
-        //   console.error('Error sending form data:', error);
-        // }
-      };
+
 
   return (
     <div className="page-section page-section__contact__form">
-        <form onSubmit={handleSubmit}>
+        <form action={async (formData) => await sendEmail(formData)}>
             <div className="page-section page-section__contact__input-container">
                 <div className="page-section page-section__contact__input">
                     <Input onChange={handleChange} labelPlacement="inside" type="text" label="Nombre(s) y Apellidos" size="md" id="name" name="name"/>
