@@ -4,8 +4,12 @@ import { useTheme } from "next-themes";
 import {Image} from "@nextui-org/react";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Card, CardBody} from "@nextui-org/react";	
 
+import { Montserrat } from "next/font/google";
+
 import { CarouselComponent } from "@/components/carousel";
 import { ContactComponent } from "@/components/contact";
+
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 
 export default function Home() {
@@ -45,7 +49,7 @@ export default function Home() {
 	  }, []);
 
 	return (
-		<div className="page-container">
+		<div className={`page-container ${montserrat.className}`}>
 			<Modal isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} hideCloseButton={true} backdrop="blur">
 				<ModalContent>
 				{(onClose) => (

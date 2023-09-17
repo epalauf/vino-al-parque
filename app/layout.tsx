@@ -1,10 +1,10 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
+import { fontSans, fontMontserrat } from "@/config/fonts";
 import { Providers } from "./providers";
 import { DropDownNavbar } from "@/components/dropdownnavbar";
-import { Link } from "@nextui-org/link";
+//import { Link } from "@nextui-org/link";
 import clsx from "clsx";
 
 export const metadata: Metadata = {
@@ -34,8 +34,8 @@ export default function RootLayout({
 			<head />
 			<body
 				className={clsx(
-					"min-h-screen bg-background font-sans antialiased",
-					fontSans.variable
+					"min-h-screen bg-background font-montserrat antialiased",
+					fontMontserrat.variable
 				)}
 			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
