@@ -9,16 +9,33 @@ import { Montserrat } from "next/font/google";
 import { CarouselComponent } from "@/components/carousel";
 import { ContactComponent } from "@/components/contact";
 
-const montserrat = Montserrat({ subsets: ['latin'] })
+import wineBullet from '../public/glass.png'
+
+
+const montserrat = Montserrat({ subsets: ['latin'] });
 
 
 export default function Home() {
 	const { theme } = useTheme();
 	const [screenHeight, setScreenHeight] = React.useState(0);
+	const [screenWidth, setScreenWidth] = React.useState(0);
 	const [logo, setLogo] = React.useState('');
 	//const containerStyle = { height: screenHeight - 64, };
 	const {isOpen, onOpen, onOpenChange} = useDisclosure();
 	const [agreed, setAgreed] = React.useState(true);
+
+	const ulStyle = {
+		listStyle: 'none',
+		paddingLeft: '0',		
+	};
+  
+	const liStyle = {
+		background: `url(${wineBullet.src}) left center no-repeat`,
+		paddingLeft: '42px',
+		backgroundSize: '20px',
+		minHeight: '100px',
+		backgroundPositionX: '10px',
+	};
 
 	React.useEffect(() => {
 		// Function to update the screen height state
@@ -50,7 +67,7 @@ export default function Home() {
 
 	return (
 		<div className={`page-container ${montserrat.className}`}>
-			<Modal isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} hideCloseButton={true} backdrop="blur">
+			<Modal isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} hideCloseButton={true} backdrop="blur" className={montserrat.className}>
 				<ModalContent>
 				{(onClose) => (
 					<>
@@ -91,12 +108,12 @@ export default function Home() {
 				<CarouselComponent />
 				<Card className="page-section__gallery__card">
 					<CardBody>
-						<ul>
-							<li>Una dedicada selección de vinos con más de 700 referencias para que disfrutes la mejor variedad de vinos en Colombia, y lo mejor, por copeo. </li>
-							<li>Más de 14 países presentes Pet friendly.</li>
-							<li>Bogotá se viste de navidad en la tercera edición del primer festival de vinos a cielo abierto. </li>
-							<li>Descubre los secretos de los mejores vinos, acompañados de la mejor comida y música en vivo!</li>
-							<li>Te sentirás viviendo una película con una increíble banda sonora.</li>
+						<ul style={ulStyle}>
+							<li style={liStyle}>Una dedicada selección de vinos con más de 700 referencias para que disfrutes la mejor variedad de vinos en Colombia, y lo mejor, por copeo.</li>
+							<li style={liStyle} >Más de 14 países presentes Pet friendly.</li>
+							<li style={liStyle} >Bogotá se viste de navidad en la tercera edición del primer festival de vinos a cielo abierto.</li>
+							<li style={liStyle} >Descubre los secretos de los mejores vinos, acompañados de la mejor comida y música en vivo!</li>
+							<li style={liStyle} >Te sentirás viviendo una película con una increíble banda sonora.</li>
 							<li>¡NO TE LO PUEDES PERDER!</li>
 						</ul>
 					</CardBody>

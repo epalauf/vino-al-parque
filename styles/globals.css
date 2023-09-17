@@ -88,19 +88,22 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    list-style-type: circle;
     font-size: 1.5rem;
 }
 
-.page-section__gallery__card ul li:last-of-type {
-    text-align: center;
-    list-style-type: none;
+.page-section__gallery__card ul li {
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
-
-.page-section__gallery__card div {
-    padding: 48px;
-
+.page-section__gallery__card ul li:last-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    box-shadow: none;
 }
 
 
