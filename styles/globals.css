@@ -147,6 +147,32 @@ main {
     color: #d3b642;
 }
 
+.page-section__intro__info__map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.page-section__intro__info__map svg {
+    color: #d3b642;
+    cursor: pointer;
+}
+
+.dropdown-navbar__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+}
+
+.dropdown-navbar__social svg:hover {
+    color: #d3b642;
+    cursor: pointer;
+    
+}
+
 
 
 @media (max-width: 1024px) {

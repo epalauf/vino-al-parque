@@ -1,9 +1,11 @@
 "use client"
 import React from "react";
 import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button, DropdownItem, DropdownTrigger, Dropdown, DropdownMenu} from "@nextui-org/react"
-import { ThemeSwitch } from "@/components/theme-switch";
+//import { ThemeSwitch } from "@/components/theme-switch";
 import { Montserrat } from "next/font/google";
 const montserrat = Montserrat({ subsets: ['latin'] });
+
+import { BsInstagram, BsFacebook, BsTwitter } from 'react-icons/bs';
 
 export const DropDownNavbar = () => {
 
@@ -74,7 +76,11 @@ export const DropDownNavbar = () => {
           </Link>
         </NavbarItem> */}
         <NavbarItem>
-            {/* <ThemeSwitch /> */}
+            <div className="dropdown-navbar__social">
+              <BsInstagram/>
+              <BsFacebook/>
+              <BsTwitter/>
+            </div>
         </NavbarItem>
       </NavbarContent>
     </Navbar>

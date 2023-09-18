@@ -9,6 +9,10 @@ import { Montserrat } from "next/font/google";
 import { CarouselComponent } from "@/components/carousel";
 import { ContactComponent } from "@/components/contact";
 
+import { BiMap } from 'react-icons/bi';
+import { BsInstagram, BsFacebook, BsTwitter } from 'react-icons/bs';
+
+
 import wineBullet from '../public/glass.png'
 
 
@@ -21,6 +25,7 @@ export default function Home() {
 	const [logo, setLogo] = React.useState('');
 	//const containerStyle = { height: screenHeight - 64, };
 	const {isOpen, onOpen, onOpenChange} = useDisclosure();
+	
 	const [agreed, setAgreed] = React.useState(true);
 
 	const ulStyle = {
@@ -63,8 +68,17 @@ export default function Home() {
 		onOpen();		  
 	  }, []);
 
+	  const openLinkInNewTab = () => {
+		let url = "https://maps.app.goo.gl/hhUDt4ZL94dHKQ3d6"
+      	const newTab = window.open(url, "_blank");
+		if (newTab) {
+			newTab.focus();
+		}		
+	  };
+
 	return (
 		<div className={`page-container ${montserrat.className}`}>
+			
 			<Modal isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} hideCloseButton={true} backdrop="blur" className={montserrat.className}>
 				<ModalContent className="page-modal__container">
 				{(onClose) => (
@@ -96,8 +110,8 @@ export default function Home() {
 					<h1>Próxima edición
 					<br /> 
 					1, 2 y 3 de diciembre.</h1>
-					<p> <a>Museo Parque el Chicó</a> 
-						<br/>
+					<p className="page-section__intro__info__map"> <span>Museo Parque el Chicó </span> <BiMap onClick={openLinkInNewTab} /></p>
+					<p>
 						A cielo abierto con aforo limitado
 						<br/>
 						Evento para mayores de edad
