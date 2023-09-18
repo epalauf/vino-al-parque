@@ -18,7 +18,6 @@ const montserrat = Montserrat({ subsets: ['latin'] });
 export default function Home() {
 	const { theme } = useTheme();
 	const [screenHeight, setScreenHeight] = React.useState(0);
-	const [screenWidth, setScreenWidth] = React.useState(0);
 	const [logo, setLogo] = React.useState('');
 	//const containerStyle = { height: screenHeight - 64, };
 	const {isOpen, onOpen, onOpenChange} = useDisclosure();
@@ -52,8 +51,7 @@ export default function Home() {
 		};
 	  }, []);
   
-	  React.useEffect(() => { 
-		
+	  React.useEffect(() => { 		
 		  if(theme === 'dark') {
 			  setLogo('/logo_gold.png');
 		  } else {
@@ -93,10 +91,12 @@ export default function Home() {
 				</ModalContent>
 			</Modal>
 			<div className="page-section page-section__intro" >
-				<Image src={`${logo}`} width={'100%'} height={'auto'} alt='logo'/>
+				<Image src={`${logo}`} width={'100%'} height={'auto'} alt='logo' className="page-section__intro-img"/>
 				<div className="page-section__intro__info">
-					<p>Próxima edición: 1, 2 y 3 de diciembre.</p>
-					<p> Museo Parque el Chicó 
+					<h1>Próxima edición:
+					<br /> 
+					1, 2 y 3 de diciembre.</h1>
+					<p> <a>Museo Parque el Chicó</a> 
 						<br/>
 						A cielo abierto con aforo limitado
 						<br/>

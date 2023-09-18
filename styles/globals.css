@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+main {
+    background-color: #231f20 !important;
+}
+
 .page-section.page-section__intro {
     display: flex;
     flex-direction: column;
@@ -79,7 +83,13 @@
     padding: 0 48px;
 }
 
-.page-section__intro__info {
+.page-section__intro__info h1 {
+    font-size: 3rem;
+    margin: 48px 0;
+    text-align: center;
+}
+
+.page-section__intro__info p {
     font-size: 2rem;
     text-align: center;
 }
@@ -95,7 +105,7 @@
     display: flex;
     align-items: center;
     border-radius: 8px;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    box-shadow: inset 2px 2px 10px -2px rgba(0,0,0,0.1);
 }
 
 .page-section__gallery__card ul li:last-of-type {
@@ -104,11 +114,28 @@
     justify-content: center;
     border-radius: 8px;
     box-shadow: none;
+    margin-top: 12px;
 }
 
+.dropdownnavbar button {
+    color: #d3b642;
+    font-weight: 500;
+}
 
+.dropdown-menu__dropdown-item span:first-of-type {
+    color: #d3b642;
+}
+
+.page-section__intro img {
+    width: 70%;
+    margin: 0 auto;
+}
 
 @media (max-width: 1024px) {
+
+    .page-section__intro img {
+        width: 100%
+    }
 
     .page-section__contact__input-container {
         flex-direction: column;
