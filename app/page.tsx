@@ -137,7 +137,7 @@ export default function Home() {
 			<div className="page-section page-section__contact" >
 				<ContactComponent />	
 				<div className="page-section page-section__contact__text">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.5518383859776!2d-74.04676212517019!3d4.673684241891491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99740ee43781%3A0xd9d997c44051f15e!2sMuseo%20del%20Chic%C3%B3!5e0!3m2!1ses!2sco!4v1694519132328!5m2!1ses!2sco" width="100%" height="192" style={{border: 0}}  loading="lazy" allowFullScreen={true} referrerPolicy="no-referrer"></iframe>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.5518383859776!2d-74.04676212517019!3d4.673684241891491!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99740ee43781%3A0xd9d997c44051f15e!2sMuseo%20del%20Chic%C3%B3!5e0!3m2!1ses!2sco!4v1694519132328!5m2!1ses!2sco" width="100%" height="100%" style={{border: 0}}  loading="lazy" allowFullScreen={true} referrerPolicy="no-referrer"></iframe>
 				
 				</div>		
 			</div>

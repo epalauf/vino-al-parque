@@ -173,6 +173,20 @@ main {
     
 }
 
+.contact-info {
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+footer {
+    gap: 4px;
+    flex-direction: column;
+}
+
+footer span {
+    color: #d3b642 !important;
+}
+
 
 
 @media (max-width: 1024px) {
@@ -205,7 +219,7 @@ main {
     }
 
     .page-section__contact {
-        margin: 20px 0;
+        margin: 0;
 
     }
 

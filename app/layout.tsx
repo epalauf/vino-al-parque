@@ -46,7 +46,7 @@ export default function RootLayout({
 						</main>
 						<footer className="w-full flex items-center justify-center py-3">
 							<span className="text-default-600">Vino al Parque 2023</span>
-							<p>Todos los derechos reservados</p>
+							<p>Todos los derechos reservados.</p>
 						</footer>
 					</div>
 				</Providers>

@@ -28,6 +28,7 @@ export const ContactComponent = () => {
 
   return (
     <div className="page-section page-section__contact__form">
+      <p className="contact-info">Regístrate en nuestro early access y no solo serás el primero en comprar tu entrada, tendrás un precio especial!</p>
         <form id="contact-form" action={async (formData) => {            
             await sendEmail(formData);
             setFormData({
@@ -63,6 +64,7 @@ export const ContactComponent = () => {
                 { !spinner ? 'Enviar' : <Spinner size="sm" color="warning" />}
             </Button>
         </form>	
+        
     </div>
 
   );
