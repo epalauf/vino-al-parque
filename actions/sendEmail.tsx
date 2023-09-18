@@ -8,7 +8,6 @@ const resend = new Resend(process.env.RESEND_API_KEY_TEST);
 import ContactFormEmail from "@/email/contact-form-email";
 
 export const sendEmail = async (formData: FormData) => {
-    console.log('running on server')
     
     const email = formData.get("email")
     const message = formData.get("message")
@@ -37,9 +36,9 @@ export const sendEmail = async (formData: FormData) => {
 
     try {
         await resend.emails.send({
-            from: "Contact form <onboarding@resend.dev>",
+            from: "Formulario VAP <onboarding@resend.dev>",
             to: "epalau@gmail.com",
-            subject: "Message from contact form",
+            subject: "Mensaje formulario VAP",
             reply_to: email,
             react: React.createElement(ContactFormEmail, {
                 name: name as string, 

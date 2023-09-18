@@ -66,10 +66,10 @@ export default function Home() {
 	return (
 		<div className={`page-container ${montserrat.className}`}>
 			<Modal isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} hideCloseButton={true} backdrop="blur" className={montserrat.className}>
-				<ModalContent>
+				<ModalContent className="page-modal__container">
 				{(onClose) => (
 					<>
-					<ModalHeader className="flex flex-col gap-1">Verifica tu Edad</ModalHeader>
+					<ModalHeader className="flex flex-col gap-1 page-modal__container__title">Verifica tu Edad</ModalHeader>
 					<ModalBody>
 						{ agreed && <p>Declaro que soy mayor de edad</p>}
 						{ !agreed && <p>Lo sentimos, está prohibido el ingreso a menores de edad al festival.</p>}
@@ -77,10 +77,10 @@ export default function Home() {
 					<ModalFooter>
 						{ agreed &&
 							<>
-								<Button color="primary" onPress={onClose}>
+								<Button  variant="ghost" onPress={onClose} className="page-modal__age">
 								si
 								</Button>
-								<Button color="secondary" onPress={()=>setAgreed(false)}>
+								<Button  variant="ghost" onPress={()=>setAgreed(false)}>
 								no
 								</Button>
 							</>
@@ -93,7 +93,7 @@ export default function Home() {
 			<div className="page-section page-section__intro" >
 				<Image src={`${logo}`} width={'100%'} height={'auto'} alt='logo' className="page-section__intro-img"/>
 				<div className="page-section__intro__info">
-					<h1>Próxima edición:
+					<h1>Próxima edición
 					<br /> 
 					1, 2 y 3 de diciembre.</h1>
 					<p> <a>Museo Parque el Chicó</a> 

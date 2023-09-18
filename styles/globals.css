@@ -131,6 +131,24 @@ main {
     margin: 0 auto;
 }
 
+.send-email__btn:hover {
+    color: #d3b642 !important;
+}
+
+.page-modal__age {
+    color: #d3b642;
+}
+
+.page-modal__container {
+    text-align: center;
+}
+
+.page-modal__container__title {
+    color: #d3b642;
+}
+
+
+
 @media (max-width: 1024px) {
 
     .page-section__intro img {
@@ -185,5 +203,16 @@ main {
 
     .page-section__gallery__card ul {
         font-size: 1rem;
+    }
+
+    .page-section__intro__info h1 {
+        font-size: 2rem;
+        margin: 24px 0;
+        text-align: center;
+    }
+
+    .page-section__intro__info p {
+        font-size: 1rem;
+
     }
 }
