@@ -3,15 +3,17 @@
 @tailwind utilities;
 
 main {
-    background-color: #231f20 !important;
+    background-color: #121010 !important;
 }
 
 .page-section.page-section__intro {
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
     justify-content: center;
     align-items: center;
+    background-image: url('/conffeti_gold.png');
+    background-size: contain;     
+
 }
 
 .page-section__gallery__card .center {
@@ -77,10 +79,6 @@ main {
 
 .page-section__contact__text {
     width: 50%;
-}
-
-.page-container {
-    padding: 0 48px;
 }
 
 .page-section__intro__info h1 {
@@ -187,7 +185,24 @@ footer span {
     color: #d3b642 !important;
 }
 
+.social__container {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 12px;
+    border-radius: 24px;
+    background-color: #231f20;
+    cursor: pointer;
+    opacity: 0.8;
+}
 
+.social__container svg {
+    color: #d3b642;
+    font-size: 24px;
+}
 
 @media (max-width: 1024px) {
 

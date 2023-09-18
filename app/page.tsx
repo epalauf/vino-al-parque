@@ -3,21 +3,12 @@ import React from "react";
 import { useTheme } from "next-themes";
 import {Image} from "@nextui-org/react";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Card, CardBody} from "@nextui-org/react";	
-
 import { Montserrat } from "next/font/google";
-
 import { CarouselComponent } from "@/components/carousel";
 import { ContactComponent } from "@/components/contact";
-
 import { BiMap } from 'react-icons/bi';
-import { BsInstagram, BsFacebook, BsTwitter } from 'react-icons/bs';
-
-
 import wineBullet from '../public/glass.png'
-
-
 const montserrat = Montserrat({ subsets: ['latin'] });
-
 
 export default function Home() {
 	const { theme } = useTheme();
@@ -39,46 +30,22 @@ export default function Home() {
 		backgroundSize: '20px',
 		minHeight: '100px',
 		backgroundPositionX: '10px',
-	};
+	};  
 
-	React.useEffect(() => {
-		// Function to update the screen height state
-		function updateScreenHeight() {
-		  setScreenHeight(window.innerHeight);
-		}  
-		// Add an event listener to update the screen height when the window is resized
-		window.addEventListener('resize', updateScreenHeight);  
-		// Initial screen height
-		updateScreenHeight();  
-		// Clean up the event listener when the component unmounts
-		return () => {
-		  window.removeEventListener('resize', updateScreenHeight);
-		};
-	  }, []);
-  
-	  React.useEffect(() => { 		
-		  if(theme === 'dark') {
-			  setLogo('/logo_gold.png');
-		  } else {
-			  setLogo('/logo_silver.png');
-		  }
-	  }, [theme]);
-
-	  React.useEffect(() => { 
+	React.useEffect(() => { 
 		onOpen();		  
-	  }, []);
+	}, []);
 
-	  const openLinkInNewTab = () => {
+	const openLinkInNewTab = () => {
 		let url = "https://maps.app.goo.gl/hhUDt4ZL94dHKQ3d6"
-      	const newTab = window.open(url, "_blank");
+		const newTab = window.open(url, "_blank");
 		if (newTab) {
 			newTab.focus();
 		}		
-	  };
+	};
 
 	return (
-		<div className={`page-container ${montserrat.className}`}>
-			
+		<div className={`page-container ${montserrat.className}`}>			
 			<Modal isOpen={isOpen} onOpenChange={onOpenChange} isDismissable={false} hideCloseButton={true} backdrop="blur" className={montserrat.className}>
 				<ModalContent className="page-modal__container">
 				{(onClose) => (
@@ -105,7 +72,7 @@ export default function Home() {
 				</ModalContent>
 			</Modal>
 			<div className="page-section page-section__intro" >
-				<Image src={`${logo}`} width={'100%'} height={'auto'} alt='logo' className="page-section__intro-img"/>
+				<Image src={`/logo_gold.png`} width={'100%'} height={'auto'} alt='logo' className="page-section__intro-img"/>
 				<div className="page-section__intro__info">
 					<h1>Próxima edición
 					<br /> 

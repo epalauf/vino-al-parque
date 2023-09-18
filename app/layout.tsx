@@ -1,10 +1,10 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
-import { fontSans, fontMontserrat } from "@/config/fonts";
+import { fontMontserrat } from "@/config/fonts";
 import { Providers } from "./providers";
-import { DropDownNavbar } from "@/components/dropdownnavbar";
-//import { Link } from "@nextui-org/link";
+//import { DropDownNavbar } from "@/components/dropdownnavbar";
+import { SocialComponent } from "@/components/social";
 import clsx from "clsx";
 
 export const metadata: Metadata = {
@@ -40,7 +40,7 @@ export default function RootLayout({
 			>
 				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
 					<div className="w-full relative flex flex-col h-screen">
-						<DropDownNavbar />
+						{/* <DropDownNavbar /> */}
 						<main className="w-full flex items-center justify-center py-3">
 							{children}
 						</main>
@@ -48,7 +48,8 @@ export default function RootLayout({
 							<span className="text-default-600">Vino al Parque 2023</span>
 							<p>Todos los derechos reservados.</p>
 						</footer>
-					</div>
+						<SocialComponent  />
+					</div>					
 				</Providers>
 			</body>
 		</html>
