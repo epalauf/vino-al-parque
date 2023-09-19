@@ -23,12 +23,10 @@ export const ContactComponent = () => {
           [name]: value,
         });
       };
-    
-
 
   return (
     <div className="page-section page-section__contact__form">
-      <p className="contact-info">Regístrate en nuestro early access y no solo serás el primero en comprar tu entrada, tendrás un precio especial!</p>
+      <p className="contact-info">Regístrate en nuestro <span>early access</span> y no solo serás el primero en comprar tu entrada, tendrás un <span>precio especial!</span></p>
         <form id="contact-form" action={async (formData) => {            
             await sendEmail(formData);
             setFormData({

@@ -140,6 +140,7 @@ export default function Home() {
 						</div>	
 						<Divider className="my-4" />
 						<p className="page-section__gallery__card-important">¡NO TE LO PUEDES PERDER!</p>
+						<p className="page-section__gallery__card-buy__text">Compra tus entradas aquí</p>
 						<div className="page-section__gallery__card-btn" >
 							<Image src={`/logotuboleta.svg`} width={'100%'} height={'auto'} alt='logo-tu-boleta' />
 						</div>
