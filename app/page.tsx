@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import {Image} from "@nextui-org/react";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Card, CardBody} from "@nextui-org/react";	
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Card, CardBody, Divider } from "@nextui-org/react";	
 import { Montserrat } from "next/font/google";
 import { CarouselComponent } from "@/components/carousel";
 import { ContactComponent } from "@/components/contact";
@@ -128,7 +128,7 @@ export default function Home() {
 								<p>Catas al Parque</p>
 							</div>
 						</div>
-
+						<Divider className="my-4" />
 						<div className="page-section__gallery__card-bullets">
 							<ul style={ulStyle}>
 								<li style={liStyle}>Una dedicada selección de vinos con más de 700 referencias para que disfrutes la mejor variedad de vinos en Colombia, y lo mejor, por copeo.</li>
@@ -138,6 +138,7 @@ export default function Home() {
 								<li style={liStyle} >Te sentirás viviendo una película con una increíble banda sonora.</li>
 							</ul>
 						</div>	
+						<Divider className="my-4" />
 						<p className="page-section__gallery__card-important">¡NO TE LO PUEDES PERDER!</p>
 						<div className="page-section__gallery__card-btn" >
 							<Image src={`/logotuboleta.svg`} width={'100%'} height={'auto'} alt='logo-tu-boleta' />

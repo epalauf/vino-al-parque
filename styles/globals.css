@@ -220,7 +220,7 @@ footer span {
 }
 
 .page-section__gallery__card-bullets {
-    margin: 42px;
+    margin: 0 42px;
 }
 
 .page-section__gallery__card-important {
@@ -291,13 +291,58 @@ footer span {
     }    
 
     .page-section__intro__info h1 {
-        font-size: 2rem;
-        margin: 24px 0;
+        font-size: 1.5rem;
+        margin: 4px 0;
         text-align: center;
     }
 
     .page-section__intro__info p {
-        font-size: 1rem;
+        font-size: 1.3rem;
 
+    }
+
+    .page-section__gallery__card-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .page-section__intro__info-date {
+        width: 90%;
+        margin-bottom: 24px;
+    }
+
+    .page-section__intro__info {
+        margin-bottom: 24px;
+    }
+
+    .page-section__gallery__card {
+        margin: 16px 4px;
+        opacity: 0.9;
+    }
+
+    .page-section__gallery__card h1 {
+        font-size: 1.7rem;
+    }
+
+    .page-section__gallery__card-item {
+        max-width: 100%;
+    }
+
+    .page-section__gallery__card-bullets {
+        margin: 0;
+    }
+
+    .page-section__gallery__card-btn {
+        width: 50%;
+        margin: 14px auto;
+    }
+
+    footer {
+        padding: 0 10px;
+    }
+
+    .footer-warning {
+        text-align: center;
     }
 }
