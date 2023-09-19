@@ -242,6 +242,15 @@ footer span {
     transition: background 1s; /* For modern browsers */  
 }
 
+.tu-boleta-logo svg {
+    color: white;
+}
+
+.tu-boleta-logo {
+    background: linear-gradient(90deg, rgba(211,182,66,1) 0%, rgba(233,212,120,1) 50%, rgba(224,177,70,1) 100%);
+    border-radius: 50%;
+}
+
 @media (max-width: 1024px) {
 
     .page-section__intro img {
