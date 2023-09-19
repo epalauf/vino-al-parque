@@ -1,23 +1,20 @@
 "use client"
 import React from "react";
-import { useTheme } from "next-themes";
 import {Image} from "@nextui-org/react";
 import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Card, CardBody} from "@nextui-org/react";	
 import { Montserrat } from "next/font/google";
 import { CarouselComponent } from "@/components/carousel";
 import { ContactComponent } from "@/components/contact";
 import { BiMap } from 'react-icons/bi';
-import wineBullet from '../public/glass.png'
+import { FaWineGlassEmpty, FaMusic, FaWineBottle } from 'react-icons/fa6';
+import { IoRestaurantOutline } from 'react-icons/io5';
+import { PiParkBold } from 'react-icons/pi';
 const montserrat = Montserrat({ subsets: ['latin'] });
-
+import { motion } from "framer-motion";
+import wineBullet from '../public/glass.png'
 export default function Home() {
-	const { theme } = useTheme();
-	const [screenHeight, setScreenHeight] = React.useState(0);
-	const [logo, setLogo] = React.useState('');
-	//const containerStyle = { height: screenHeight - 64, };
-	const {isOpen, onOpen, onOpenChange} = useDisclosure();
-	
-	const [agreed, setAgreed] = React.useState(true);
+	const {isOpen, onOpen, onOpenChange} = useDisclosure();	
+	const [agreed, setAgreed] = React.useState(true);  
 
 	const ulStyle = {
 		listStyle: 'none',
@@ -26,12 +23,11 @@ export default function Home() {
   
 	const liStyle = {
 		background: `url(${wineBullet.src}) left center no-repeat`,
-		paddingLeft: '42px',
+		paddingLeft: '32px',
 		backgroundSize: '20px',
-		minHeight: '100px',
-		backgroundPositionX: '10px',
-	};  
+		marginBottom: '12px',
 
+	};  
 	React.useEffect(() => { 
 		onOpen();		  
 	}, []);
@@ -74,29 +70,79 @@ export default function Home() {
 			<div className="page-section page-section__intro" >
 				<Image src={`/logo_gold.png`} width={'100%'} height={'auto'} alt='logo' className="page-section__intro-img"/>
 				<div className="page-section__intro__info">
-					<h1>Próxima edición
+					<h1>VOLVIMOS PARA ENCENDER LA NAVIDAD</h1>
 					<br /> 
-					1, 2 y 3 de diciembre.</h1>
-					<p className="page-section__intro__info__map"> <span>Museo Parque el Chicó </span> <BiMap onClick={openLinkInNewTab} /></p>
-					<p>
+					<p className="page-section__intro__info-date">1, 2 y 3 de diciembre</p>
+					<p className="page-section__intro__info__map"> <span>Parque Museo el Chicó </span> <BiMap onClick={openLinkInNewTab} /></p>
+					{/* <p>
 						A cielo abierto con aforo limitado
 						<br/>
 						Evento para mayores de edad
-					</p>
+					</p> */}
 				</div>
 			</div>
 			<div className="page-section page-section__gallery" >
 				<CarouselComponent />
 				<Card className="page-section__gallery__card">
 					<CardBody>
-						<ul style={ulStyle}>
-							<li style={liStyle}>Una dedicada selección de vinos con más de 700 referencias para que disfrutes la mejor variedad de vinos en Colombia, y lo mejor, por copeo.</li>
-							<li style={liStyle} >Más de 14 países presentes Pet friendly.</li>
-							<li style={liStyle} >Bogotá se viste de navidad en la tercera edición del primer festival de vinos a cielo abierto.</li>
-							<li style={liStyle} >Descubre los secretos de los mejores vinos, acompañados de la mejor comida y música en vivo!</li>
-							<li style={liStyle} >Te sentirás viviendo una película con una increíble banda sonora.</li>
-							<li>¡NO TE LO PUEDES PERDER!</li>
-						</ul>
+						<h1>Que encontrarás</h1>
+						<div className="page-section__gallery__card-items">
+							<div className="page-section__gallery__card-item" >
+								<motion.div
+									className="box"
+									whileHover={{ scale: 1.1 }}
+									transition={{ type: "spring", stiffness: 400, damping: 10 }}
+								><FaWineBottle /></motion.div>								
+								<p>Más de 700 referencias seleccionadas de Vino</p>
+							</div>
+							<div className="page-section__gallery__card-item" >
+								<motion.div
+									className="box"
+									whileHover={{ scale: 1.1 }}
+									transition={{ type: "spring", stiffness: 400, damping: 10 }}
+								><IoRestaurantOutline /></motion.div>
+								<p>14  Diferentes categorías de restaurantes</p>
+							</div>
+							<div className="page-section__gallery__card-item" >
+								<motion.div
+									className="box"
+									whileHover={{ scale: 1.1 }}
+									transition={{ type: "spring", stiffness: 400, damping: 10 }}
+								><FaMusic /></motion.div>								
+								<p>Más de 12 bandas locales</p>
+							</div>
+							<div className="page-section__gallery__card-item" >
+								<motion.div
+									className="box"
+									whileHover={{ scale: 1.1 }}
+									transition={{ type: "spring", stiffness: 400, damping: 10 }}
+								><FaWineGlassEmpty /></motion.div>								
+								<p>Catas Petite</p>
+							</div>
+							<div className="page-section__gallery__card-item" >
+								<motion.div
+									className="box"
+									whileHover={{ scale: 1.1 }}
+									transition={{ type: "spring", stiffness: 400, damping: 10 }}
+								><PiParkBold /></motion.div>								
+								<p>Catas al Parque</p>
+							</div>
+						</div>
+
+						<div className="page-section__gallery__card-bullets">
+							<ul style={ulStyle}>
+								<li style={liStyle}>Una dedicada selección de vinos con más de 700 referencias para que disfrutes la mejor variedad de vinos en Colombia, y lo mejor, por copeo.</li>
+								<li style={liStyle} >Más de 14 países presentes Pet friendly.</li>
+								<li style={liStyle} >Bogotá se viste de navidad en la tercera edición del primer festival de vinos a cielo abierto.</li>
+								<li style={liStyle} >Descubre los secretos de los mejores vinos, acompañados de la mejor comida y música en vivo!</li>
+								<li style={liStyle} >Te sentirás viviendo una película con una increíble banda sonora.</li>
+							</ul>
+						</div>	
+						<p className="page-section__gallery__card-important">¡NO TE LO PUEDES PERDER!</p>
+						<div className="page-section__gallery__card-btn" >
+							<Image src={`/logotuboleta.svg`} width={'100%'} height={'auto'} alt='logo-tu-boleta' />
+						</div>
+											
 					</CardBody>
 				</Card>
 				

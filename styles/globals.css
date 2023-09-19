@@ -16,29 +16,14 @@ main {
 
 }
 
-.page-section__gallery__card .center {
-    text-align: center !important;
-}
-
 .page-section.page-section__gallery {
+    background-image: url('/conffeti_gold.png');
+    background-size: contain;
     display: flex;
     flex-direction: column;
-    gap: 48px;
-    padding: 48px 0;
-}
-
-.page-section.page-section__gallery p {
-   font-size: 1.5rem;
-   text-align: justify;
-   margin: 4px 0;
-}
-
-.carousel.carousel-slider {
-    border-radius: 8px;
 }
 
 .page-section__gallery__col:first-of-type {
-
     margin-top: 48px;
 }
 
@@ -56,6 +41,7 @@ main {
 .page-section__contact {
     display: flex;
     gap: 24px;
+    margin: 0 48px;
 }
 
 .page-section__contact iframe {
@@ -82,37 +68,14 @@ main {
 }
 
 .page-section__intro__info h1 {
-    font-size: 3rem;
-    margin: 48px 0;
+    font-size: 2rem;
+    margin: 8px 0;
     text-align: center;
 }
 
 .page-section__intro__info p {
     font-size: 2rem;
     text-align: center;
-}
-
-.page-section__gallery__card ul {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    font-size: 1.5rem;
-}
-
-.page-section__gallery__card ul li {
-    display: flex;
-    align-items: center;
-    border-radius: 8px;
-    box-shadow: inset 2px 2px 10px -2px rgba(0,0,0,0.1);
-}
-
-.page-section__gallery__card ul li:last-of-type {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    box-shadow: none;
-    margin-top: 12px;
 }
 
 .dropdownnavbar button {
@@ -204,6 +167,81 @@ footer span {
     font-size: 24px;
 }
 
+.page-section__intro__info-date {
+    background: linear-gradient(90deg, rgba(211,182,66,1) 0%, rgba(233,212,120,1) 50%, rgba(224,177,70,1) 100%);
+    padding: 0px 12px;
+    border-radius: 24px;
+    width: -moz-fit-content;
+    width: 60%;
+    margin: 0 auto;
+    color: #231f20;
+    margin-bottom: 32px;
+}
+
+.page-section__intro__info {
+    margin-bottom: 60px;
+}
+
+.page-section__gallery__card {    
+    margin: 24px;
+    opacity: 0.9;
+}
+
+.page-section__gallery__card h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 24px 0;
+}   
+
+.page-section__gallery__card-items {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.page-section__gallery__card-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 150px;
+    gap: 24px;
+}
+
+.page-section__gallery__card-item svg {
+    font-size: 3rem;
+    color: #d3b642;
+    
+}
+
+.page-section__gallery__card-item p {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.page-section__gallery__card-bullets {
+    margin: 42px;
+}
+
+.page-section__gallery__card-important {
+    text-align: center;
+}
+
+.page-section__gallery__card-btn {
+    width: 15%;
+    margin: 24px auto;
+    padding: 4px 0;
+    border: 1px solid #d3b642;
+    border-radius: 16px;
+    cursor: pointer;   
+}
+
+.page-section__gallery__card-btn:hover {
+    background-color: rgba(211, 182, 66, 1);
+    -webkit-transition: background 1s; /* For Safari */
+    transition: background 1s; /* For modern browsers */  
+}
+
 @media (max-width: 1024px) {
 
     .page-section__intro img {
@@ -251,14 +289,6 @@ footer span {
         padding: 1rem 0;
         text-align: center;
     }    
-
-    .page-section__intro__info {
-        font-size: 1rem;
-    }
-
-    .page-section__gallery__card ul {
-        font-size: 1rem;
-    }
 
     .page-section__intro__info h1 {
         font-size: 2rem;

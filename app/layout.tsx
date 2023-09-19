@@ -45,6 +45,7 @@ export default function RootLayout({
 							{children}
 						</main>
 						<footer className="w-full flex items-center justify-center py-3">
+							<p><span>*</span>EVENTO PARA MAYORES DE 18 AÑOS. EL EXCESO DE ALCOHOL ES PERJUDICIAL PARA LA SALUD</p>
 							<span className="text-default-600">Vino al Parque 2023</span>
 							<p>Todos los derechos reservados.</p>
 						</footer>
