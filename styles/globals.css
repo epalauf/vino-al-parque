@@ -11,11 +11,13 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;    
-    background-size: contain !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
 }
 
 .page-section.page-section__gallery {
     background-size: cover !important;
+    background-repeat: no-repeat !important;
     display: flex;
     flex-direction: column;
 }
