@@ -1,7 +1,18 @@
 "use client"
 import React from "react";
-import {Image} from "@nextui-org/react";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Card, CardBody, Divider } from "@nextui-org/react";	
+import { Image } from "@nextui-org/react";
+import { Modal, 
+		ModalContent,
+		ModalHeader, 
+		ModalBody, 
+		ModalFooter, 
+		Button, 
+		useDisclosure,
+		Card, 
+		CardBody, 
+		Divider, 
+		ButtonGroup,
+	} from "@nextui-org/react";	
 import { Montserrat } from "next/font/google";
 import { CarouselComponent } from "@/components/carousel";
 import { ContactComponent } from "@/components/contact";
@@ -11,10 +22,13 @@ import { IoRestaurantOutline } from 'react-icons/io5';
 import { PiParkBold } from 'react-icons/pi';
 const montserrat = Montserrat({ subsets: ['latin'] });
 import { motion } from "framer-motion";
-import wineBullet from '../public/glass.png'
+import wineBullet from '../public/glass.png';
+
+
 export default function Home() {
 	const {isOpen, onOpen, onOpenChange} = useDisclosure();	
-	const [agreed, setAgreed] = React.useState(true);  
+	const [agreed, setAgreed] = React.useState(true); 
+	const [tempBackGround, setTempBackGround] = React.useState('url(/conffeti_gold1.png)') 
 
 	const ulStyle = {
 		listStyle: 'none',
@@ -28,6 +42,11 @@ export default function Home() {
 		marginBottom: '12px',
 
 	};  
+
+	const bgStyle = {
+		background: tempBackGround,		
+	}
+
 	React.useEffect(() => { 
 		onOpen();		  
 	}, []);
@@ -39,6 +58,19 @@ export default function Home() {
 			newTab.focus();
 		}		
 	};
+
+	function opBackGround (op: string) {
+		if(op === '1') {
+			setTempBackGround('url(/conffeti_gold1.png)')			
+		}
+		if(op === '2') {
+			setTempBackGround('url(/conffeti_gold2.png)')			
+		}
+		if(op === '3') {
+			setTempBackGround('url(/conffeti_gold3.png)')			
+		}
+
+	}
 
 	return (
 		<div className={`page-container ${montserrat.className}`}>			
@@ -67,7 +99,13 @@ export default function Home() {
 				)}
 				</ModalContent>
 			</Modal>
-			<div className="page-section page-section__intro" >
+			<ButtonGroup className="temp-button-group">
+				<Button color="warning" onClick={() => {opBackGround('1')}}>BG 1</Button>
+				<Button color="warning" onClick={() => {opBackGround('2')}}>BG 2</Button>
+				<Button color="warning" onClick={() => {opBackGround('3')}}>BG 3</Button>
+			</ButtonGroup>
+			
+			<div className="page-section page-section__intro" style={bgStyle} >
 				<Image src={`/logo_gold.png`} width={'100%'} height={'auto'} alt='logo' className="page-section__intro-img"/>
 				<div className="page-section__intro__info">
 					<h1>VOLVIMOS PARA ENCENDER LA NAVIDAD</h1>
@@ -81,7 +119,7 @@ export default function Home() {
 					</p> */}
 				</div>
 			</div>
-			<div className="page-section page-section__gallery" >
+			<div className="page-section page-section__gallery" style={bgStyle} >
 				<CarouselComponent />
 				<Card className="page-section__gallery__card">
 					<CardBody>
@@ -131,11 +169,9 @@ export default function Home() {
 						<Divider className="my-4" />
 						<div className="page-section__gallery__card-bullets">
 							<ul style={ulStyle}>
-								<li style={liStyle}>Una dedicada selección de vinos con más de 700 referencias para que disfrutes la mejor variedad de vinos en Colombia, y lo mejor, por copeo.</li>
-								<li style={liStyle} >Más de 14 países presentes Pet friendly.</li>
-								<li style={liStyle} >Bogotá se viste de navidad en la tercera edición del primer festival de vinos a cielo abierto.</li>
-								<li style={liStyle} >Descubre los secretos de los mejores vinos, acompañados de la mejor comida y música en vivo!</li>
-								<li style={liStyle} >Te sentirás viviendo una película con una increíble banda sonora.</li>
+								<li style={liStyle}>Aforo limitado.</li>
+								<li style={liStyle} >Pet friendly.</li>
+								<li style={liStyle} >Evento para mayores de edad.</li>
 							</ul>
 						</div>	
 						<Divider className="my-4" />

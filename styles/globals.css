@@ -10,15 +10,12 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-image: url('/conffeti_gold.png');
-    background-size: contain;     
-
+    align-items: center;    
+    background-size: contain !important;
 }
 
 .page-section.page-section__gallery {
-    background-image: url('/conffeti_gold.png');
-    background-size: contain;
+    background-size: cover !important;
     display: flex;
     flex-direction: column;
 }
@@ -249,6 +246,13 @@ footer span {
 
 .page-section__gallery__card-buy__text {
     text-align: center;
+}
+
+.temp-button-group {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 999;
 }
 
 @media (max-width: 1024px) {
