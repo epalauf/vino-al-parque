@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react';
-import { BsInstagram, BsFacebook, BsTwitter, BsFillStarFill } from 'react-icons/bs';
+import { BsInstagram, BsFacebook, BsTwitter, BsTiktok } from 'react-icons/bs';
 import { Image } from '@nextui-org/react';
 import { motion } from "framer-motion";
 
@@ -17,17 +17,35 @@ export const SocialComponent = () => {
             className="box"
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        ><BsInstagram /></motion.div>
+        ><BsInstagram onClick={() => {
+            let url = "https://www.instagram.com/vinoalparque.col/?igshid=MzRlODBiNWFlZA=="
+            const newTab = window.open(url, "_blank");
+            if (newTab) {
+                newTab.focus();
+            }
+        }} /></motion.div>
         <motion.div
             className="box"
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        ><BsFacebook /></motion.div>
+        ><BsFacebook onClick={() => {
+            let url = "https://www.facebook.com/VinoAlParque?mibextid=LQQJ4d"
+            const newTab = window.open(url, "_blank");
+            if (newTab) {
+                newTab.focus();
+            }
+        }}/></motion.div>
         <motion.div
             className="box"
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        ><BsTwitter /></motion.div>
+        ><BsTiktok onClick={() => {
+            let url = "https://www.tiktok.com/@vinoalparque.col?_t=8fsr4gG92bG&_r=1"
+            const newTab = window.open(url, "_blank");
+            if (newTab) {
+                newTab.focus();
+            }
+        }} /></motion.div>
     </div>
   )
 }

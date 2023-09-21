@@ -28,7 +28,6 @@ import wineBullet from '../public/glass.png';
 export default function Home() {
 	const {isOpen, onOpen, onOpenChange} = useDisclosure();	
 	const [agreed, setAgreed] = React.useState(true); 
-	const [tempBackGround, setTempBackGround] = React.useState('url(/conffeti_gold1.png)') 
 
 	const ulStyle = {
 		listStyle: 'none',
@@ -40,12 +39,10 @@ export default function Home() {
 		paddingLeft: '32px',
 		backgroundSize: '20px',
 		marginBottom: '12px',
+		fontWeight: '700',
+		color: 'white'
 
 	};  
-
-	const bgStyle = {
-		background: tempBackGround,		
-	}
 
 	React.useEffect(() => { 
 		onOpen();		  
@@ -58,19 +55,6 @@ export default function Home() {
 			newTab.focus();
 		}		
 	};
-
-	function opBackGround (op: string) {
-		if(op === '1') {
-			setTempBackGround('url(/conffeti_gold1.png)')			
-		}
-		if(op === '2') {
-			setTempBackGround('url(/conffeti_gold2.png)')			
-		}
-		if(op === '3') {
-			setTempBackGround('url(/conffeti_gold3.png)')			
-		}
-
-	}
 
 	return (
 		<div className={`page-container ${montserrat.className}`}>			
@@ -99,13 +83,7 @@ export default function Home() {
 				)}
 				</ModalContent>
 			</Modal>
-			<ButtonGroup className="temp-button-group">
-				<Button color="warning" onClick={() => {opBackGround('1')}}>BG 1</Button>
-				<Button color="warning" onClick={() => {opBackGround('2')}}>BG 2</Button>
-				<Button color="warning" onClick={() => {opBackGround('3')}}>BG 3</Button>
-			</ButtonGroup>
-			
-			<div className="page-section page-section__intro" style={bgStyle} >
+			<div className="page-section page-section__intro" >
 				<Image src={`/logo_gold.png`} width={'100%'} height={'auto'} alt='logo' className="page-section__intro-img"/>
 				<div className="page-section__intro__info">
 					<h1>VOLVIMOS PARA ENCENDER LA NAVIDAD</h1>
@@ -119,7 +97,7 @@ export default function Home() {
 					</p> */}
 				</div>
 			</div>
-			<div className="page-section page-section__gallery" style={bgStyle} >
+			<div className="page-section page-section__gallery" >
 				<CarouselComponent />
 				<Card className="page-section__gallery__card">
 					<CardBody>

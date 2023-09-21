@@ -10,16 +10,18 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
+    align-items: center;  
+    background-image: url('/conffeti_gold2.png');  
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .page-section.page-section__gallery {
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
+    background-size: contain;
     display: flex;
     flex-direction: column;
+    background-image: url('/conffeti_gold2.png');
+    background-position-y: bottom;
 }
 
 .page-section__gallery__col:first-of-type {
@@ -188,13 +190,16 @@ footer span {
 
 .page-section__gallery__card {    
     margin: 24px;
-    opacity: 0.9;
+
+    background: linear-gradient(90deg, rgba(211,182,66,0.7) 0%, rgba(233,212,120,0.7) 50%, rgba(224,177,70,0.7) 100%);
 }
 
 .page-section__gallery__card h1 {
     font-size: 2rem;
     text-align: center;
     margin: 24px 0;
+    font-weight: 700;
+    color: white;
 }   
 
 .page-section__gallery__card-items {
@@ -214,13 +219,15 @@ footer span {
 
 .page-section__gallery__card-item svg {
     font-size: 3rem;
-    color: #d3b642;
+    color: white;
     
 }
 
 .page-section__gallery__card-item p {
     font-size: 1.2rem;
     text-align: center;
+    font-weight: 700;
+    color: white;
 }
 
 .page-section__gallery__card-bullets {
@@ -229,6 +236,8 @@ footer span {
 
 .page-section__gallery__card-important {
     text-align: center;
+    font-weight: 700;
+    color: white;
 }
 
 .page-section__gallery__card-btn {
@@ -248,13 +257,8 @@ footer span {
 
 .page-section__gallery__card-buy__text {
     text-align: center;
-}
-
-.temp-button-group {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 999;
+    font-weight: 700;
+    color: white;
 }
 
 @media (max-width: 1024px) {
@@ -338,6 +342,8 @@ footer span {
 
     .page-section__gallery__card h1 {
         font-size: 1.7rem;
+        font-weight: 700;
+        color: white;
     }
 
     .page-section__gallery__card-item {
