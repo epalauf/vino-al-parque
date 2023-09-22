@@ -1,5 +1,4 @@
 "use client"
-
 import React from 'react';
 import { BsInstagram, BsFacebook, BsTwitter, BsTiktok } from 'react-icons/bs';
 import { Image } from '@nextui-org/react';
